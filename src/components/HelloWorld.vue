@@ -1,19 +1,22 @@
 <template>
   <div class="hello">
+    <div>State object :</div>
     <div>{{ state }}</div>
-    <button @click="inc">+</button>
-    <button @click="setObjBasic">setObjBasic</button>
-    <button @click="setObjImmer">setObjImmer</button>
+    <div style="height: 50px" />
+    <div>Mutations :</div>
+    <div><button @click="inc">increment</button></div>
+    <div><button @click="setObjBasic">setObjBasic</button></div>
+    <div><button @click="setObjImmer">setObjImmer</button></div>
   </div>
 </template>
 
 <script>
-import { computed } from '@vue/composition-api';
+import { computed } from "@vue/composition-api";
 
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   props: {
-    msg: String
+    msg: String,
   },
   setup(_, context) {
     const store = context.root.$store;
@@ -21,17 +24,13 @@ export default {
 
     return {
       state,
-      inc: () => store.commit('increment'),
-      setObjBasic: () => store.commit(
-        'setObjBasic',
-        { k: 'o', v: 'helloObject' },
-      ),
-      setObjImmer: () => store.commit(
-        'setObjImmer',
-        { k: 'o', v: 'helloImmer' },
-      ),
+      inc: () => store.commit("increment"),
+      setObjBasic: () =>
+        store.commit("setObjBasic", { k: "o", v: "helloObject" }),
+      setObjImmer: () =>
+        store.commit("setObjImmer", { k: "o", v: "helloImmer" }),
     };
-  }
-}
+  },
+};
 </script>
 

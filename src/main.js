@@ -25,6 +25,7 @@ const store = new Vuex.Store({
       };
     },
     setObjImmer(state, { k, v }) {
+      // saving a line of code "...state.obj" 
       state.obj = produce(state.obj, (draftState) => {
         draftState[k] = v;
       });
