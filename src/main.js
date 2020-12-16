@@ -10,7 +10,9 @@ Vue.use(VueCompositionAPI);
 const store = new Vuex.Store({
   state: {
     count: 10,
-    obj: {},
+    obj: {
+      hello_world: 'hello-world',
+    },
   },
   mutations: {
     increment(state) {
