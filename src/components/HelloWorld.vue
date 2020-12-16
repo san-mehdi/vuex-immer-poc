@@ -26,9 +26,9 @@ export default {
       state,
       inc: () => store.commit("increment"),
       setObjBasic: () =>
-        store.commit("setObjBasic", { k: "o", v: "helloObject" }),
+        store.commit("setObjBasic", { k: "key", v: "helloObject" }),
       setObjImmer: () =>
-        store.commit("setObjImmer", { k: "o", v: "helloImmer" }),
+        store.commit("setObjImmer", { k: "key", v: "helloImmer" }),
     };
   },
 };
